@@ -13,7 +13,8 @@ Es richtet sich an Entwickler und Administratoren, die schnell und sicher Passw√
 
 --------
 
-V2:
+# V2:
+
 <img width="579" height="391" alt="image" src="https://github.com/user-attachments/assets/200fd0cd-cf26-40d6-9367-91293fcb48f6" />
 
 ### Features:
