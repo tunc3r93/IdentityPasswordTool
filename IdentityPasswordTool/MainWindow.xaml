@@ -16,6 +16,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -24,15 +25,27 @@
                  Height="30"
                  Text="{Binding PlainPassword}"/>
 
-        <Button Grid.Row="2"
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,10,0,10">
+            <TextBlock Text="IterationCount:" VerticalAlignment="Center"/>
+            <TextBox Width="80" Margin="5,0,10,0" Text="{Binding IterationCount}"/>
+            <CheckBox Content="Identity V3" IsChecked="{Binding UseIdentityV3}"/>
+        </StackPanel>
+        <TextBlock Grid.Row="2"
+                   Margin="5,40,0,0"
+                   Foreground="DarkRed"
+                   Text="{Binding VersionHint}" />
+
+
+        <Button Grid.Row="3"
                 Height="35"
                 Margin="0,10,0,10"
                 Content="Hash generieren"
                 Command="{Binding GenerateCommand}"/>
 
-        <TextBox Grid.Row="3"
+        <TextBox Grid.Row="4"
                  Text="{Binding PasswordHash}"
                  IsReadOnly="True"
                  TextWrapping="Wrap"/>
     </Grid>
+
 </Window>
