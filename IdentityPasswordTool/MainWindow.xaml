@@ -1,12 +1,38 @@
 ﻿<Window x:Class="IdentityPasswordTool.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:IdentityPasswordTool"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        xmlns:vm="clr-namespace:IdentityPasswordTool.ViewModels"
+        Title="Identity Password Hash Tool"
+        Height="400"
+        Width="600"
+        WindowStartupLocation="CenterScreen">
 
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Klartext Passwort" FontWeight="Bold"/>
+        <TextBox Grid.Row="1"
+                 Height="30"
+                 Text="{Binding PlainPassword}"/>
+
+        <Button Grid.Row="2"
+                Height="35"
+                Margin="0,10,0,10"
+                Content="Hash generieren"
+                Command="{Binding GenerateCommand}"/>
+
+        <TextBox Grid.Row="3"
+                 Text="{Binding PasswordHash}"
+                 IsReadOnly="True"
+                 TextWrapping="Wrap"/>
     </Grid>
 </Window>
