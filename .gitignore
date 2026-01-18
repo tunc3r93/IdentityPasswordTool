@@ -1,0 +1,25 @@
+# Build results
+bin/
+obj/
+
+# Rider / IntelliJ
+.idea/
+*.iml
+riderModule.iml
+
+# ReSharper
+_ReSharper.Caches/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet
+packages/
+
+# OS
+.DS_Store
+Thumbs.db
